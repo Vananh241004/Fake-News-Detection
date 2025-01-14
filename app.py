@@ -18,7 +18,8 @@ def predict_news(text):
     
     # Predict with the model
     prediction = model.predict(padded_sequence)
-    return "Fake News" if prediction[0] > 0.5 else "Real News"
+    print(prediction)
+    return "Fake News" if prediction[0] < 0.5 else "Real News"
 
 # Streamlit UI
 st.title("Fake News Detection")
